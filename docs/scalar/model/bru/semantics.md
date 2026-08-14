@@ -101,9 +101,9 @@ begin
     WritePC(ReadPC() + LSL(halfword_offset, 1));
 end;
 
-func AddToPC(destination: Reg5Selector, halfword_offset: Word)
+func AddToPC(destination: Reg5Selector, upper_immediate: Word)
 begin
-    WriteScalarDestination(destination, ReadTPC() + LSL(halfword_offset, 1));
+    WriteScalarDestination(destination, ReadTPC() + LSL(upper_immediate, 12));
 end;
 ```
 <!-- GENERATED-ASL-END: unit -->
